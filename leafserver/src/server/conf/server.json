@@ -1,0 +1,5 @@
+{
+  "LogLevel": "debug",
+  "LogPath": "",
+  "WSAddr": "127.0.0.1:13001"
+}
