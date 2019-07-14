@@ -1,6 +1,8 @@
 # Golang Leaf框架阅读笔记
 
-结合之前的游戏项目，研究Leaf的前世三生，主要是为了加强对项目的理解，以及源码的学习
+结合之前的游戏项目，研究Leaf的前世三生，主要是为了加强对项目的理解，以及源码的学习。
+
+该仓库使用go的moudle作为管理，并将依赖注入vendor文件夹
 
 # 基本介绍
 
@@ -14,18 +16,18 @@
 
 # 浅析
 
-## Leaf的Go机制浅析
+### [Leaf的Go机制浅析]()
 
-## Leaf的定时器浅析
+### [Leaf的定时器浅析]()
 
-## Leaf的Log模块浅析
+### [Leaf的Log模块浅析]()
 
-## Leaf的ChanRPC模块浅析
+### [Leaf的ChanRPC模块浅析]()
 
-## Leaf的Gate模块浅析
+### [Leaf的Gate模块浅析]()
 
-## Leaf的NetWork模块浅析
+### [Leaf的NetWork模块浅析](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/NetWork.MD)
 
-## Leaf的Moudle模块浅析
+### [Leaf的Moudle模块浅析]()
 
-## Leaf的游戏配置文件读取浅析
+### [Leaf的游戏配置文件读取浅析]()
