@@ -16,7 +16,7 @@
 
 # 浅析
 
-### [Leaf的Go机制浅析]()
+### [Leaf的Go机制浅析](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/LeafGo.MD)
 
 ### [Leaf的定时器浅析]()
 
