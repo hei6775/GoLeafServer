@@ -16,18 +16,18 @@
 
 # 浅析
 
-### [Leaf的Go机制浅析](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/LeafGo.MD)
+### [Leaf的Go机制浅析（完成）](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/LeafGo.MD)
 
-### [Leaf的定时器浅析]()
+### [Leaf的定时器浅析（待完成）]()
 
-### [Leaf的Log模块浅析]()
+### [Leaf的Log模块浅析 （待完成）]()
 
-### [Leaf的ChanRPC模块浅析]()
+### [Leaf的ChanRPC模块浅析（完成）](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/ChanRPC.MD)
 
-### [Leaf的Gate模块浅析]()
+### [Leaf的Gate模块浅析 （待完成）]()
 
-### [Leaf的NetWork模块浅析](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/NetWork.MD)
+### [Leaf的NetWork模块浅析（完成）](https://github.com/hei6775/GoLeafServer/blob/master/LeafNotes/NetWork.MD)
 
-### [Leaf的Moudle模块浅析]()
+### [Leaf的Moudle模块浅析（待完成）]()
 
-### [Leaf的游戏配置文件读取浅析]()
+### [Leaf的游戏配置文件读取浅析（待完成）]()
