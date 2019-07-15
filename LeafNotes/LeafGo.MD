@@ -81,6 +81,39 @@ func (g *Go)Idle()bool{
 以及项目需求。主要看消息的传递保障性。
 
 可以发现Go机制控制了并发的Go数量，每次在当前协程新开一个`goroutine`新开一个Go的任务，就会在`pending`中++，
-每次完成一个Go的任务就会对应的减少`pending`。当然也如作者所言，Go机制第一个函数参数会在新开的`goroutine`中
-完成，并不会阻塞当前`goroutine`，并且在完成后会在当前`goroutine`完成第二个函数参数
+每次完成一个Go的任务就会对应的减少`pending`。当然代码也比较简洁，Go机制第一个函数参数会在新开的`goroutine`中
+完成，并不会阻塞当前`goroutine`，并且在完成后通过调用`Close()`方法或者直接调用`Cb()`函数，会在当前`goroutine`
+完成第二个函数参数。
+
+在这里，理论上等到通道消息传过来是会发生阻塞的，但是在Leaf框架中，集成到`skeleton`中通过`select`同时监听多个消息通道，
+从而避免阻塞第一个任务阻塞当前协程。
+```go
+func (s *Skeleton) Run(closeSig chan bool) {
+	for {
+		select {
+		case <-closeSig:
+			s.commandServer.Close()
+			s.server.Close()
+			for !s.g.Idle() || !s.client.Idle() {
+				s.g.Close()
+				s.client.Close()
+			}
+			return
+		case ri := <-s.client.ChanAsynRet:
+			s.client.Cb(ri)
+		case ci := <-s.server.ChanCall:
+			s.server.Exec(ci)
+		case ci := <-s.commandServer.ChanCall:
+			s.commandServer.Exec(ci)
+		case cb := <-s.g.ChanCb:
+		    //就是这里
+			s.g.Cb(cb)
+		case t := <-s.dispatcher.ChanTimer:
+			t.Cb()
+		}
+	}
+}
+```
+
+
 
